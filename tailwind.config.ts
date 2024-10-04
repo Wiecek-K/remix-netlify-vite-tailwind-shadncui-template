@@ -1,4 +1,6 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from "tailwindcss";
+import plugin from "tailwindcss/plugin";
+import tailwindcssSignals from "tailwindcss-signals";
 
 export default {
     darkMode: ['class'],
@@ -54,5 +56,9 @@ export default {
   		}
   	}
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"),    plugin(function ({ addVariant }) {
+    addVariant("children", "&>*");
+  }),
+  tailwindcssSignals,
+    require("tailwindcss-animate")],
 } satisfies Config
