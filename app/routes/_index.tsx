@@ -1,4 +1,5 @@
 import type { MetaFunction } from "@netlify/remix-runtime";
+import { Button } from "~/components/ui/button";
 
 export const meta: MetaFunction = () => {
   return [
@@ -36,6 +37,7 @@ export default function Index() {
           </a>
         </li>
       </ul>
+      <Button variant={"secondary"}>ABC</Button>
     </div>
   );
 }
